@@ -1,5 +1,10 @@
 def main():
-    path_to_file = "books/frankenstein.txt"
+    import sys
+    try:
+        path_to_file = sys.argv[1]
+    except IndexError:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
     text = get_book_text(path_to_file)
     word_count = get_num_words(text)
     print("============ BOOKBOT ============")
