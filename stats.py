@@ -11,3 +11,13 @@ def count_character(text):
         else:
             chara_count[letter] = 1
     return chara_count
+
+def clean_on(chara_dic):
+    letter_count = []
+    for letter in chara_dic:
+        if letter.isalpha() == True:
+            clean_dict = {}
+            clean_dict["char"] = letter
+            clean_dict["num"] = chara_dic[letter]
+            letter_count.append(clean_dict)
+    return letter_count
