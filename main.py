@@ -5,11 +5,15 @@ def main():
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {path_to_file}")
     print("----------- Word Count -----------")
-    print(f"{word_count} words found in the document")
+    print(f"Found {word_count} total words")
     print("-------- Character Count --------")
     chara_dic = count_character(text)
     clean_dict = clean_on(chara_dic)
-    sort_on(clean_dict)
+    sorted_list = sort_on(clean_dict)
+    for key in sorted_list:
+        char = key["char"]
+        num = key["num"]
+        print(f"{char}: {num}")
 
 
 def get_book_text(path_to_file):
@@ -22,4 +26,5 @@ from stats import count_character
 
 from stats import clean_on
 
+from stats import sort_on
 main()

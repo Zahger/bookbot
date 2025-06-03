@@ -21,3 +21,9 @@ def clean_on(chara_dic):
             clean_dict["num"] = chara_dic[letter]
             letter_count.append(clean_dict)
     return letter_count
+
+def sort_on(list_dict):
+    sorted_list = sorted(list_dict, key=lambda x: x["num"], reverse=True)
+    return sorted_list
+     
+
